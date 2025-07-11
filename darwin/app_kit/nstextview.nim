@@ -57,5 +57,7 @@ proc scrollRangeToVisible*(self: NSTextView, range: NSRange) {.objc: "scrollRang
 # Text storage access
 proc textStorage*(self: NSTextView): NSTextStorage {.objc: "textStorage".}
 
-proc setAlignment*(self: NSTextView, alignment: NSTextAlignment) {.objc: "setAlignment:".}
-proc alignment*(self: NSTextView): NSTextAlignment {.objc: "alignment".}
+# Positioning APIs
+proc setTextContainerInset*(self: NSTextView, inset: NSSize) {.objc: "setTextContainerInset:".}
+proc textContainerInset*(self: NSTextView): NSSize {.objc: "textContainerInset".}
+proc textContainerOrigin*(self: NSTextView): NSPoint {.objc: "textContainerOrigin".}
