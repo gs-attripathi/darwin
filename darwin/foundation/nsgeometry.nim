@@ -5,6 +5,9 @@ type
     NSPoint* = CGPoint
     NSRect* = CGRect
     NSSize* = CGSize
+    NSRange* {.bycopy.} = object
+        location*: int
+        length*: int
 
 proc NSMakePoint*(x, y: CGFloat): NSPoint =
     result.x = x
@@ -19,3 +22,7 @@ proc NSMakeRect*(x, y, w, h: CGFloat): NSRect =
     result.origin.y = y
     result.size.width = w
     result.size.height = h
+
+proc NSMakeRange*(location, length: int): NSRange =
+    result.location = location
+    result.length = length
