@@ -52,3 +52,6 @@ proc `[]=`*[K, V](d: NSMutableDictionary[K, V], k: K, o: V) = d.setObject(o, k)
 
 proc removeObject[K, V](d: NSMutableDictionaryAbstract, k: K) {.objc: "removeObjectForKey:".}
 proc del*[K, V](d: NSMutableDictionary[K, V], k: K) = cast[NSMutableDictionaryAbstract](d).removeObject(k)
+
+proc dictionaryWithObject_forKey[T](t: typedesc[T], obj: NSObject, key: NSObject): T {.objc: "dictionaryWithObject:forKey:".}
+proc dictionaryWithObject_forKey*[K, V](obj: V, key: K): NSDictionary[K, V] = cast[NSDictionary[K, V]](NSDictionaryAbstract.dictionaryWithObject_forKey(obj, key))
