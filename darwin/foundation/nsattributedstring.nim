@@ -5,7 +5,9 @@ type
   NSAttributedString* = ptr object of NSObject
   NSMutableAttributedString* = ptr object of NSAttributedString
 
-proc initWithString*(self: NSAttributedString, str: NSString): NSAttributedString {.objc: "initWithString:".}
+const NSParagraphStyleAttributeName* = "NSParagraphStyle" # Apple constant for paragraph style attribute
+
+proc initWithString*(self: NSAttributedString, str: NSString, attrs: NSDictionary): NSAttributedString {.objc: "initWithString:attributes:".}
 proc initWithString*(self: NSMutableAttributedString, str: NSString): NSMutableAttributedString {.objc: "initWithString:".}
 
 proc string*(self: NSAttributedString): NSString {.objc: "string".}
