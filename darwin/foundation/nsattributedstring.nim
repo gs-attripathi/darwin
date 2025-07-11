@@ -1,5 +1,6 @@
 import ../objc/runtime
 import nsstring, nsgeometry
+import nsdictionary
 
 type 
   NSAttributedString* = ptr object of NSObject
