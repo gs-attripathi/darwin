@@ -56,3 +56,6 @@ proc scrollRangeToVisible*(self: NSTextView, range: NSRange) {.objc: "scrollRang
 
 # Text storage access
 proc textStorage*(self: NSTextView): NSTextStorage {.objc: "textStorage".}
+
+proc setAlignment*(self: NSTextView, alignment: NSTextAlignment) {.objc: "setAlignment:".}
+proc alignment*(self: NSTextView): NSTextAlignment {.objc: "alignment".}
